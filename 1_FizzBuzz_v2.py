@@ -6,8 +6,12 @@
 import sys
 import numbers
 
+
 if len(sys.argv) == 1:
-    n = int(float(input("Enter a number: ")))
+    try:
+        n = int(float(input("Enter a number: ")))
+    except ValueError:
+        n = int(float(input("That is not a valid entry.  Please enter a number: ")))
 else:
     try:
         n = int(float(sys.argv[1]))
